@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RMO Refresh</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    .note-box {
+      width: 300px;
+      min-height: 100px;
+      border: 2px solid #333;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>RMO RISK TOKEN SHOPEE</h1>
+  <div class="note-box" id="noteBox">Klik tombol untuk melihat catatan</div>
+  <button onclick="refreshNote()">RMO Refresh</button>
+  <button onclick="copyNote()">RMO Copy</button>
+
+  <script>
+    const notes = [
+      "yJSqDRmRDefnwIrhqyFcVA==|Ve65roBHZ3Ce1IIIgXEyUiA6Vg5XD/WC/UxjBbAOgDpE3BQd2RdFEyZzC8AzJu0Dy7xmmCVIDsw5ubLlNkWC6V3vLm8DZgSg3Xh9hA==|F0biCFljRgk2GlYx|08|1",
+      "KybmIz+1xGaAaMQPgq1n5Q==|O5AoD5/foibdTtabyeRqe9TWHgQXuGn3Y1KbaNGTeh4JI9oT+lTQdxMl5lnhV+6kk0kexhK0T+l3aYgZd+RY0Flu+VMVEOnWBjAsEA==|LHxlTH69+uCWcw0U|08|1",
+      "KBSGFa/P/JzLN1Pr/A64Kg==|s8qtcSApqg/7xz4t1lUOH6eh56vS21AKRs+FTPtq2kmBXQFLr83o0GoVXt07Tw5wcasdmtH1K/vLwSUa2+A4qcC+H/VEjRJ1eNj9gg==|y0rlj5ZskaqEmxQz|08|1",
+      "mdamLIaVzdXx8LN+9GVhPw==|2fG58kZUBYgbSGcM1Ow53FUanR+Ts2x3UutQJwCD9PgowTe0N8pRmZAcV88PCrgUjeiz4ymrSFTplyu2QGsEsDu+JgPlSNPOYSKx0A==|w8BdJAa6TBjT2aFz|08|1",
+      "wHQShKeskCwliI3QTYcmpQ==|dSy2gmHfOBCwL4eMNez1VfG2MVg282v1WH4Hp4s0rFrIkkwj1vWH7Q+iPocsUcvBOnl6t3iVQ3NPAKlppdkP0XK0YDIZkfxi6P4GRw==|ckOwxGjzbSEgjnp0|08|1",
+      "EoX6fhWAHAHJoJd4UxWmAw==|c9L5/k/J64CD3rYbAH5vGTaAMlloWwK4lPnXnAneybdGtBVQvf+qyZRNLwIkr7cS0yuyoQjx6N8qvQ3Bn0haksdRKALTycJ9cKPtgA==|SUmPBDOSMIwM0J3h|08|1",
+      "tp0mvjFfgZaGQ9Y+qHEALQ==|sE5J6Jw6hpe3iMBsDz1topwAp1ASxfUhAQ0BC/QZhzPqGLa6U+vBaCk8iduAEFkaobHah1ii+x/27gk8T763rwbjpHzXPeUXiVk3Wg==|N6ZlrBmApfC3NOcj|08|1",
+      "6OQein1UeUKDNwFdo3ffRA==|RzMQkvLS5wD/AYHZe8mdXXbQdPpB5mdM82OX5V1ZhhHihOh8Qs0l8wVjo2LTYn1ZDhNY0LaTil0ReEMhVDJxPXsoMsHpJ273QqgDdw==|y/LaRLce2g6qKtPd|08|1",
+      "CyRFydTsBtdIKieEJWqSHg==|bx5t3XS9bjbBXjkcIPAfGbkX3AZ5hnpk6GodwLLwEjNKjLwb6DHTD+OzQm3IllFcrty0bG5t/jJAujpQZXQBlPGxMUPqSDlVLKM3kw==|nXTxaOChbHXuJ+l+|08|1",
+      "iNsXviEBfrwgZdyGEdlHow==|I7UJbIhZNdwyRdP9dW/knQzH8HvxF4O09vGaGwjVvmxVcqF4Vj77/yan5iih6FOFLriEwm9NuuXYSpbDTGAix8BeNs4lfYaMG3yEgQ==|0AMbT4sAWJwWw+mE|08|1"
+    ];
+
+    function refreshNote() {
+      const randomIndex = Math.floor(Math.random() * notes.length);
+      document.getElementById("noteBox").textContent = notes[randomIndex];
+    }
+    function copyNote() {
+  const noteText = document.getElementById("noteBox").textContent;
+  navigator.clipboard.writeText(noteText)
+    .then(() => alert("Catatan disalin ke clipboard!"))
+    .catch(err => alert("Gagal menyalin: " + err));
+    }
+  </script>
+</body>
+</html>
